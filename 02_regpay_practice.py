@@ -415,19 +415,19 @@ ax[0].legend(loc='upper left')
 # modeled regular payments
 xs_agg_df = [[xs['date'] + timedelta(days=i), x] for i, x in enumerate(xs['recomposed'])]
 xs_agg_df = pd.DataFrame(xs_agg_df, columns=['date', 'transaction'])
-ax[1].plot(xs_agg_df['date'], xs_agg_df['transaction'], lw=0.5, color='red', label='Composite')
-ax[1].axhline(np.average(xs['recomposed']), lw=0.2, ls='--', label='Average')
-ax[1].set_ylabel("regularity of payments [$]")
-ax[1].legend(loc='upper left')
+ax[2].plot(xs_agg_df['date'], xs_agg_df['transaction'], lw=0.5, color='red', label='Composite')
+ax[2].axhline(np.average(xs['recomposed']), lw=0.2, ls='--', label='Average')
+ax[2].set_ylabel("regularity of payments [$]")
+ax[2].legend(loc='upper left')
 
 # modeled individual payments
 for i, r in recomposed_signal_df.filter(F.col('customer')==customer_id).toPandas().iterrows():
   xs_ind_df = [[r['date'] + timedelta(days=i), x] for i, x in enumerate(r['recomposed'])]
   xs_ind_df = pd.DataFrame(xs_ind_df, columns=['date', 'transaction'])
-  ax[2].plot(xs_ind_df['date'], xs_ind_df['transaction'], lw=0.5, label='Payments to {}'.format(r['merchant']))
-ax[2].set_ylabel("regularity of individual payments [$]")
-ax[2].set_xlabel("transaction date")
-ax[2].legend(loc='upper left')
+  ax[1].plot(xs_ind_df['date'], xs_ind_df['transaction'], lw=0.5, label='Payments to {}'.format(r['merchant']))
+ax[1].set_ylabel("regularity of individual payments [$]")
+ax[1].set_xlabel("transaction date")
+ax[1].legend(loc='upper left')
 
 # COMMAND ----------
 
@@ -579,20 +579,20 @@ xs_agg_df = pd.DataFrame(xs_agg_df, columns=['date', 'transaction'])
 ys_agg_df = [[ys['date'] + timedelta(days=i), x] for i, x in enumerate(ys['recomposed'])]
 ys_agg_df = pd.DataFrame(ys_agg_df, columns=['date', 'transaction'])
 
-ax[0].plot(xs_agg_df['date'], xs_agg_df['transaction'], lw=0.5, color='red', label='Optimized payments')
-ax[0].plot(ys_agg_df['date'], ys_agg_df['transaction'], lw=0.4, color='orange', label='Original composite')
-ax[0].axhline(np.average(xs['recomposed']), lw=0.2, ls='--', label='Average')
-ax[0].set_ylabel("regularity of payments [$]")
-ax[0].legend(loc='upper left')
+ax[1].plot(xs_agg_df['date'], xs_agg_df['transaction'], lw=0.5, color='red', label='Optimized payments')
+ax[1].plot(ys_agg_df['date'], ys_agg_df['transaction'], lw=0.4, color='orange', label='Original composite')
+ax[1].axhline(np.average(xs['recomposed']), lw=0.2, ls='--', label='Average')
+ax[1].set_ylabel("regularity of payments [$]")
+ax[1].legend(loc='upper left')
 
 # modeled individual payments
 for i, r in optimized_signals_df.filter(F.col('customer') == customer_id).toPandas().iterrows():
   xs_ind_df = [[r['date'] + timedelta(days=i), x] for i, x in enumerate(r['recomposed'])]
   xs_ind_df = pd.DataFrame(xs_ind_df, columns=['date', 'transaction'])
-  ax[1].plot(xs_ind_df['date'], xs_ind_df['transaction'], lw=0.5, label='Payments to {}'.format(r['merchant']))
-ax[1].set_ylabel("regularity of individual payments [$]")
-ax[1].set_xlabel("transaction date")
-ax[1].legend(loc='upper left')
+  ax[0].plot(xs_ind_df['date'], xs_ind_df['transaction'], lw=0.5, label='Payments to {}'.format(r['merchant']))
+ax[0].set_ylabel("regularity of individual payments [$]")
+ax[0].set_xlabel("transaction date")
+ax[0].legend(loc='upper left')
 
 # COMMAND ----------
 
