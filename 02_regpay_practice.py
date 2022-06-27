@@ -51,7 +51,7 @@ plt.show()
 
 # COMMAND ----------
 
-# MAGIC %run ./utils/regpay_utils
+from utils.regpay_utils import *
 
 # COMMAND ----------
 
@@ -662,3 +662,7 @@ display(
 
 # MAGIC %md
 # MAGIC In this notebook, we demonstrated a novel approach to consumer analytics. Using physics theory coupled with scalable computing and AI best practices on a same platform, retail banks can better model customer transactional behaviors in real time, detect payment regularity and provide each of their customers with financial advices and personalized insights, resulting in a more inclusive and human approach to retail banking, all powered by the Lakehouse for Financial Services
+
+# COMMAND ----------
+
+

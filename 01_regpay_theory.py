@@ -57,10 +57,6 @@ plt.xlabel("transaction date")
 
 # COMMAND ----------
 
-from utils.regpay_utils import create_calendar_df
-
-# COMMAND ----------
-
 from pyspark.sql import functions as F
 import pandas as pd
 import numpy as np
