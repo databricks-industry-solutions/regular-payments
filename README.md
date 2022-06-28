@@ -11,7 +11,7 @@ ___
 
 ___
 
-<img src='images/reference_architecture.png' width=800>
+<img src='images/workflow.png' width=800>
 
 ___
 
