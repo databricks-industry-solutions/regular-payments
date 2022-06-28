@@ -1,0 +1,3 @@
+timeseries_minimum: 5
+periodicity_max: 60
+optimization_runs: 500

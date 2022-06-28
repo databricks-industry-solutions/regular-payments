@@ -1,9 +1,11 @@
 # Databricks notebook source
-config = {
-  'timeseries_minimum'        :  5,
-  'periodicity_max'           :  60,
-  'optimization_runs'         :  500,
-}
+%pip install -r requirements.txt
+
+# COMMAND ----------
+
+import yaml
+with open('config/application.yaml', 'r') as f:
+  config = yaml.safe_load(f)
 
 # COMMAND ----------
 
