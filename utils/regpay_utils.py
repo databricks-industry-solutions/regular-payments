@@ -12,6 +12,23 @@ def create_calendar_df(min_date, max_date):
   return dates_df
 
 
+def closest_enum(period):
+  '''Simple approximation from period to ENUMs'''
+  if period <= 2:
+    return "DAILY"
+  if period >= 6 and period <= 8:
+    return "WEEKLY"
+  if period >= 13 and period <= 17:
+    return "BIWEEKLY"
+  if period >= 25 and period <= 32:
+    return "MONTHLY"
+  if period >= 40 and period <= 65:
+    return "BIMONTHLY"
+  if period >= 80 and period <= 95:
+    return "QUARTERLY"
+  return ""
+
+
 def to_triangle_signal(xs):
   
   split = list(np.where(xs != 0)[0])

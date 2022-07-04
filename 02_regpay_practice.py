@@ -607,7 +607,7 @@ optimized_struct = ArrayType(StructType(
     StructField('payment_date_original', DateType(), True),
     StructField('payment_date_suggested', DateType(), True),
     StructField('payment_amount', DoubleType(), True),
-    StructField('payment_frequency', IntegerType(), True),
+    StructField('payment_frequency', StringType(), True),
   ]
 ))
 
@@ -637,7 +637,7 @@ def get_optimized_date(first_date, shift, old_shift, ffts):
     amount = round(amount + fft['real']/fft['size'], 2)
   
     # reporting that suggested payment
-    periods.append([first_payment_orig, first_payment, amount, period])
+    periods.append([first_payment_orig, first_payment, amount, closest_enum(period)])
   
   return periods
 
@@ -655,14 +655,12 @@ display(
     F.col('payment.payment_date_suggested'),
     F.col('payment.payment_frequency'),
     F.col('payment.payment_amount')
-  ).filter(F.col('customer') == customer_id)
+  )
+  .filter(F.col('customer') == customer_id)
+  .filter(F.col('payment_frequency') != '')
 )
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC In this notebook, we demonstrated a novel approach to consumer analytics. Using physics theory coupled with scalable computing and AI best practices on a same platform, retail banks can better model customer transactional behaviors in real time, detect payment regularity and provide each of their customers with financial advices and personalized insights, resulting in a more inclusive and human approach to retail banking, all powered by the Lakehouse for Financial Services
-
-# COMMAND ----------
-
-
