@@ -11,7 +11,7 @@ ___
 
 ___
 
-<img src='images/workflow.png' width=800>
+<img src='https://github.com/databricks-industry-solutions/regular-payments/blob/main/images/workflow.png' width=800>
 
 ___
 
