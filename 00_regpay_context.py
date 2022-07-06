@@ -14,7 +14,7 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC <img src=https://d1r5llqwmkrl74.cloudfront.net/notebooks/fsi/regpay/images/workflow.png width="800px">
+# MAGIC <img src=https://github.com/databricks-industry-solutions/regular-payments/blob/main/images/workflow.png width="800px">
 
 # COMMAND ----------
 
