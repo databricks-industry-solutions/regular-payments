@@ -5,7 +5,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run ./config/regpay_config
+# MAGIC %run ./config/configure_notebook
 
 # COMMAND ----------
 

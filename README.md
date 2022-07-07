@@ -11,7 +11,7 @@ ___
 
 ___
 
-<img src='https://github.com/databricks-industry-solutions/regular-payments/blob/main/images/workflow.png' width=800>
+<img src='https://raw.githubusercontent.com/databricks-industry-solutions/reg-reporting/main/images/reference_architecture.png' width=800>
 
 ___
 

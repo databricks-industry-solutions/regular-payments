@@ -1,5 +1,5 @@
 # Databricks notebook source
-%pip install -r requirements.txt
+# MAGIC %pip install -r requirements.txt
 
 # COMMAND ----------
 
@@ -15,9 +15,8 @@ warnings.filterwarnings("ignore")
 # COMMAND ----------
 
 import mlflow
-useremail = dbutils.notebook.entry_point.getDbutils().notebook().getContext().userName().get()
-experiment_name = f"/Users/{useremail}/regpay_experiment"
-mlflow.set_experiment(experiment_name) 
+username = dbutils.notebook.entry_point.getDbutils().notebook().getContext().userName().get()
+mlflow.set_experiment('/Users/{}/regpay'.format(username))
 
 # COMMAND ----------
 
