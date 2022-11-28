@@ -22,7 +22,7 @@ mlflow.set_experiment('/Users/{}/regpay'.format(username))
 
 # Where we might stored temporary data on local disk
 from pathlib import Path
-temp_directory = "/tmp/{}/regpay".format(useremail)
+temp_directory = "/tmp/{}/regpay".format(username)
 Path(temp_directory).mkdir(parents=True, exist_ok=True)
 
 # COMMAND ----------

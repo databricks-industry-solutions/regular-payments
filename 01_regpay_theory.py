@@ -1,4 +1,8 @@
 # Databricks notebook source
+# MAGIC %md You may find this accelerator at https://github.com/databricks-industry-solutions/regular-payments. Please clone this repo to run, instead of using the downloaded DBC file.
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC # The Theory
 # MAGIC Before delving into the actual solution, let's get back to our physics fundamentals. In this notebook, we will explore signal processing theory as it may apply to retail banking and card transaction data. Let's select an hypothetical user for a subscription service we know would exhibit strong seasonality (such as Netflix). Easy to eye ball on a graph, such a payment regularity would be difficult to programmatically extract from billions of card transactions, especially when the regularity of payments may not be of exact match (bank holidays or missed payments). 
